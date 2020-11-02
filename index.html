@@ -1,14 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>个人主页</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>2048小游戏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/main.css"/>
+    <script type="text/javascript" src="./js/min.js"></script>
 </head>
-<body>
-    <h1>个人主页</h1>
-    <h3>-9527-</h3>
-    <script src="./js/index.js"></script>
-</body>
-</html>
+<style>
+  
+</style>
+<body> 
+    <div class="container">
+        <div class="main">
+            <div class="gameName">2048小游戏</div>
+            <div class="maxScore">最高分：
+                <span id="maxScore">1345612</span>
+            </div>
+            <div class="col-sm-3 col-md-4"></div>
+            <div class="gameBody col-sm-6 col-md-4" id="gameBody">
+                <div class="row">
+                    <div class="item emptyItem x0y0" x="0" y="0"></div>
+                    <div class="item emptyItem x0y1" x="0" y="1"></div>
+                    <div class="item emptyItem x0y2" x="0" y="2"></div>
+                    <div class="item emptyItem x0y3" x="0" y="3"></div>
+                </div>
+                <div class="row">
+                    <div class="item emptyItem x1y0" x="1" y="0"></div>
+                    <div class="item emptyItem x1y1" x="1" y="1"></div>
+                    <div class="item emptyItem x1y2" x="1" y="2"></div>
+                    <div class="item emptyItem x1y3" x="1" y="3"></div>
+                </div>
+                <div class="row">
+                    <div class="item emptyItem x2y0" x="2" y="0"></div>
+                    <div class="item emptyItem x2y1" x="2" y="1"></div>
+                    <div class="item emptyItem x2y2" x="2" y="2"></div>
+                    <div class="item emptyItem x2y3" x="2" y="3"></div>
+                </div>
+                <div class="row">
+                    <div class="item emptyItem x3y0" x="3" y="0"></div>
+                    <div class="item emptyItem x3y1" x="3" y="1"></div>
+                    <div class="item emptyItem x3y2" x="3" y="2"></div>
+                    <div class="item emptyItem x3y3" x="3" y="3"></div>
+                </div>
+            </div>
+            <div class="gameRule col-sm-12 col-md-12">请用键盘的方向键进行操作</div>
+            <div class="col-sm-5 col-md-5"></div>
+            <div class="scoreAndRefresh col-sm-6 col-md-6">
+                <div class="gameScore ">得分：<span id="gameScore">0</span> 分</div>
+                <button type="button" class="btn btn-danger refreshBtn">
+                    <span class="">刷新</span>
+                </button>
+            </div>
+            
+            <!--modal fade 必写  , id 必写, aria-hidden 是否隐藏,默认为true     data-backdrop 弹出框时，点击框外，会不会关闭框，默认为true，true为点击框外会关闭模态框 -->
+            <div class="modal fade" id="gameOverModal" aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-tittle" id="myModalLabel">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                            Game Over!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-danger refreshBtn">再玩一次</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    </html>
